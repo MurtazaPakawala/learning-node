@@ -3,8 +3,10 @@ const path = require("path");
 const port = 8000;
 const app = express();
 const db = require("./config/mongoose");
+const Contact = require("./models/contact");
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
+//using the middleware for parsing the req
 app.use(express.urlencoded());
 
 var contacts = [
